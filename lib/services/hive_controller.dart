@@ -1,6 +1,7 @@
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import '../controller/setting_controller.dart';
 import '../controller/transaction_controller.dart';
 import '../model/transaction_model.dart';
 

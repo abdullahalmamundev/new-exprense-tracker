@@ -1,6 +1,7 @@
+import 'package:expense_tracker/controller/setting_controller.dart';
 import 'package:expense_tracker/views/settings_screen.dart';
 import 'package:expense_tracker/views/statistics.dart';
-import 'package:expense_tracker/views/transaction_lits_screen.dart';
+import 'package:expense_tracker/views/transaction_lists_screen.dart';
 import 'package:expense_tracker/widgets/transaction_tile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -10,22 +11,31 @@ import '../utils/app_colors.dart';
 import 'add_transaction_screen.dart';
 
 class DashboardScreen extends StatefulWidget {
-  const DashboardScreen({super.key});
+
+   DashboardScreen({super.key});
+
+   final SettingsController controller = Get.find<SettingsController>();
+
+
+
+
   @override
   _DashboardScreen createState() => _DashboardScreen();
 }
 
 class _DashboardScreen extends State<DashboardScreen> {
 
-  int currentIndex = 0;
 
+  int currentIndex = 0;
   final List<Widget> screens = [
     Center(child: Text("Dash Board")),
     StatisticsScreen(),
     SettingsScreen(),
   ];
-  final controller =
-  Get.find<TransactionController>();
+  final controller = Get.find<TransactionController>();
+  final settings = Get.find<SettingsController>();
+
+
 
   Null get bottomNavigationBar => null;
 
@@ -125,8 +135,7 @@ class _DashboardScreen extends State<DashboardScreen> {
                     const SizedBox(height: 20),
 
                     Row(
-                      mainAxisAlignment:
-                      MainAxisAlignment.spaceAround,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Column(
                           children: [
